@@ -1,8 +1,12 @@
 import "./App.css";
 
 import { formatEther } from "@ethersproject/units";
-import { useEtherBalance, useTokenBalance, useCall } from "@usedapp/core";
-import { ethers } from "ethers";
+import { useEtherBalance, useTokenBalance, useCall} from "@usedapp/core";
+import { Contract } from "@ethersproject/contracts";
+import { utils } from "ethers";
+
+// ABIs
+import TokenggAvax from "./abi/contract/tokens/TokenggAVAX.sol/TokenggAVAX.json"
 
 const ACCOUNT_0 = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
 const ACCOUNT_1 = "0x70997970C51812dc3A010C7d01b50e0d17dc79C8";
@@ -26,23 +30,31 @@ let contractAddresses = {
   MinipoolManager: "0xEF86CEc1CEf0C78E5725fA6Cc3E9929788bBde35",
 };
 
-// function useBlasdbaosubdou(tokenAddress,address) {
-//   const { value, error } =
-//     useCall(
-//       address &&
-//         tokenAddress && {
-//           contract: new ethers.Contract(tokenAddress, ERC20Interface), // instance of called contract
-//           method: "balanceOf", // Method to be called
-//           args: [address], // Method arguments - address to be checked for balance
-//         }
-//     ) ?? {};
-//   if(error) {
-//     console.error(error.message)
-//     return undefined
-//   }
-//   return value?.[0]
-// }
+// const rewardsCycleEnd = await ggAVAX.rewardsCycleEnd();
+// const lastRewardAmount = await ggAVAX.lastRewardAmount();
+// const networkTotalAssets = await ggAVAX.totalReleasedAssets();
+// const stakingTotalAssets = await ggAVAX.stakingTotalAssets();
+// const amountAvailableForStaking = await ggAVAX.amountAvailableForStaking();
+// const totalAssets = await ggAVAX.totalAssets();
 
+function useGGAVAXStats(func) {
+  const TokenggAvaxInterface = new utils.Interface(
+    TokenggAvax.abi
+  );
+  const { value, error } =
+    useCall(
+      func && {
+          contract: new Contract(contractAddresses["TokenggAVAX"], TokenggAvaxInterface), // instance of called contract
+          method: func, // Method to be called
+          args: [], // Method arguments - address to be checked for balance
+        }
+    ) ?? {};
+  if(error) {
+    console.error(error.message)
+    return undefined
+  }
+  return value?.[0]
+}
 // "alice",
 // 		"bob",
 // 		"cam",
@@ -54,6 +66,7 @@ let contractAddresses = {
 // 		"rewarder",
 
 function App() {
+  const totalAssets = useGGAVAXStats("totalAssets");
   // Account #0 Balances
   const avaxBalance0 = useEtherBalance(ACCOUNT_0);
   const wavaxBalance0 = useTokenBalance(contractAddresses["WAVAX"], ACCOUNT_0);
@@ -145,10 +158,18 @@ function App() {
   const tokenggavax = useEtherBalance(contractAddresses["TokenggAVAX"]);
   const minipoolmanager = useEtherBalance(contractAddresses["MinipoolManager"]);
 
+
+
   return (
     <div className="App">
       <header className="App-header">
         <div className="left">
+        <div className="balances">
+            <h3>TokenggAvaxContract:</h3>
+            <ul>
+              {totalAssets && <li>{formatEther(totalAssets)} Total Assets</li>}
+            </ul>
+          </div>
           <div className="balances">
             <h3>Alice:</h3>
             <ul>
