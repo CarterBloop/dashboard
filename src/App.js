@@ -55,6 +55,7 @@ function useGGAVAXStats(func) {
   }
   return value?.[0]
 }
+
 // "alice",
 // 		"bob",
 // 		"cam",
@@ -66,7 +67,6 @@ function useGGAVAXStats(func) {
 // 		"rewarder",
 
 function App() {
-  const totalAssets = useGGAVAXStats("totalAssets");
   // Account #0 Balances
   const avaxBalance0 = useEtherBalance(ACCOUNT_0);
   const wavaxBalance0 = useTokenBalance(contractAddresses["WAVAX"], ACCOUNT_0);
@@ -147,7 +147,7 @@ function App() {
     contractAddresses["TokenggAVAX"],
     ACCOUNT_8
   );
-
+  // Contracts
   const multicall = useEtherBalance(contractAddresses["Multicall"]);
   const wavax = useEtherBalance(contractAddresses["WAVAX"]);
   const storage = useEtherBalance(contractAddresses["Storage"]);
@@ -158,16 +158,33 @@ function App() {
   const tokenggavax = useEtherBalance(contractAddresses["TokenggAVAX"]);
   const minipoolmanager = useEtherBalance(contractAddresses["MinipoolManager"]);
 
-
+  // tokenggAvax
+  const totalFloat = useGGAVAXStats("totalFloat");
+  const amountAvailableForStaking = useGGAVAXStats("amountAvailableForStaking");
+  const totalAssets = useGGAVAXStats("totalAssets");
+  const rewardsCycleLength = useGGAVAXStats("rewardsCycleLength");
+  const lastSync = useGGAVAXStats("lastSync");
+  const rewardsCycleEnd = useGGAVAXStats("rewardsCycleEnd");
+  const lastRewardAmount = useGGAVAXStats("lastRewardAmount");
+  const totalReleasedAssets = useGGAVAXStats("totalReleasedAssets");
+  const stakingTotalAssets = useGGAVAXStats("stakingTotalAssets");
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="left">
         <div className="balances">
-            <h3>TokenggAvaxContract:</h3>
+            <h3>TokenggAvax.sol</h3>
             <ul>
-              {totalAssets && <li>{formatEther(totalAssets)} Total Assets</li>}
+              {rewardsCycleLength && <li>Rewards Cycle Length: {rewardsCycleLength}</li>}
+              {lastSync && <li>Last Sync: {lastSync}</li>}
+              {rewardsCycleEnd && <li>Rewards Cycle End: {rewardsCycleEnd}</li>}
+              {lastRewardAmount && <li>Last Reward Amount: {formatEther(lastRewardAmount)}</li>}
+              {totalReleasedAssets && <li>Total Released Assets: {formatEther(totalReleasedAssets)}</li>}
+              {stakingTotalAssets && <li>Staking Total Assets: {formatEther(stakingTotalAssets)}</li>}
+              {totalFloat && <li>Total Float: {formatEther(totalFloat)}</li>}
+              {amountAvailableForStaking &&<li>Amount Available for Staking: {formatEther(amountAvailableForStaking)}</li>}
+              {totalAssets && <li>Total Assets: {formatEther(totalAssets)}</li>}
             </ul>
           </div>
           <div className="balances">
