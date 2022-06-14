@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { Localhost, DAppProvider} from '@usedapp/core'
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const config = {
+  readOnlyChainId: Localhost.chainId,
+  readOnlyUrls: {
+    [Localhost.chainId]: 'http://127.0.0.1:8545',
+  },
+}
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <DAppProvider config={config}>
+      <App />
+  </DAppProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
