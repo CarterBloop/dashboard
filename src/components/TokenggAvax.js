@@ -45,7 +45,7 @@ function TokenggAvax() {
       <ul>
         {rewardsCycleLength && (
           <li>Rewards Cycle Length: {rewardsCycleLength}</li>
-        )}
+          )}
         {lastSync && <li>Last Sync: {lastSync}</li>}
         {rewardsCycleEnd && <li>Rewards Cycle End: {rewardsCycleEnd}</li>}
         {lastRewardAmount && (

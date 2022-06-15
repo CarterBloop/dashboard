@@ -3,6 +3,9 @@ import "./App.css";
 import TokenggAvax from "./components/TokenggAvax";
 import TestAccounts from "./components/TestAccounts";
 import ContractBalances from "./components/ContractBalances";
+import Oracle from "./components/Oracle";
+import SetGGPPrice from "./components/SetGGPPrice";
+import MinipoolManager from "./components/MinipoolManager";
 
 function App() {
   return (
@@ -12,8 +15,11 @@ function App() {
           <TestAccounts/>
         </div>
         <div className="right">
-        <TokenggAvax/>
-        <ContractBalances/>
+          <TokenggAvax/>
+          <ContractBalances />
+          <Oracle/>
+          <SetGGPPrice/>
+          <MinipoolManager/>
         </div>
       </header>
     </div>
