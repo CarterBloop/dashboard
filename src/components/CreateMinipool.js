@@ -21,8 +21,8 @@ const nodeID = (seed) => {
 };
 
 function CreateMinipool() {
-    let w = new ethers.Wallet(privateKeys["ACCOUNT_3"]);
-    let node = w.address;
+    let w = new ethers.Wallet(privateKeys["ACCOUNT_3"],ethers.getDefaultProvider("http://localhost:8545"));
+    let node = nodeID(1); // Replace with w.address eventually
     let duration = 9999;
     let delegationFee = 5;
     let ggpBondAmt = utils.parseEther("200");
@@ -37,7 +37,8 @@ function CreateMinipool() {
     }
 
     return (
-      <div>
+      <div className="balances">
+        <p>Create minipool for NodeOp1: </p>
         <button onClick={() => makePool()}>Create Minipool</button>
         <p>Status: {status}</p>
       </div>
