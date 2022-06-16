@@ -41,7 +41,7 @@ function TokenggAvax() {
 
   return (
     <div className="balances">
-      <h3>TokenggAvax.sol</h3>
+      <h3>ggAVAX:</h3>
       <ul>
         {rewardsCycleLength && (
           <li>Rewards Cycle Length: {rewardsCycleLength}</li>

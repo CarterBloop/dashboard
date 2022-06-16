@@ -33,10 +33,10 @@ function Oracle() {
 
   return (
     <div className="balances">
-      <h3>Oracle.sol</h3>
+      <h3>GGP Token</h3>
       <ul>
         {GGPPrice && (
-          <li>GGP Price: {formatEther(GGPPrice)}</li>
+          <li>Price: {formatEther(GGPPrice)}</li>
         )}
       </ul>
     </div>

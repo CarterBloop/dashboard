@@ -32,7 +32,7 @@ function MinipoolManager() {
 
   return (
     <div className="balances">
-      <h3>MinipoolManager.sol</h3>
+      <h3>Minipools:</h3>
       <ul>
         {minipoolCount && <li># of minipools: {minipoolCount.toNumber()}</li>}
       </ul>
