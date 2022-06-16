@@ -6,8 +6,6 @@ import ContractBalances from "./components/ContractBalances";
 import Oracle from "./components/Oracle";
 import SetGGPPrice from "./components/SetGGPPrice";
 import MinipoolManager from "./components/MinipoolManager";
-import CreateMinipool from "./components/CreateMinipool";
-import DepositAVAX from "./components/depositAVAX";
 
 function App() {
   return (
@@ -21,9 +19,7 @@ function App() {
           <TokenggAvax/>
           <Oracle/>
           <SetGGPPrice/>
-          <DepositAVAX/>
           <MinipoolManager/>
-          <CreateMinipool/>
         </div>
       </header>
     </div>

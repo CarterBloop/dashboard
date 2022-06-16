@@ -1,6 +1,14 @@
 import { formatEther } from "@ethersproject/units";
 import { useEtherBalance, useTokenBalance } from "@usedapp/core";
 
+import DepositAVAX from "./DepositAVAX";
+import CreateMinipool from "./CreateMinipool";
+import WithdrawMinipool from "./WithdrawMinipool";
+import ClaimMinipool from "./ClaimMinipool";
+import RecordStakingStart from "./RecordStakingStart";
+import RecordStakingEnd from "./RecordStakingEnd";
+import RedeemggAVAX from "./RedeemggAVAX";
+
 // Contract Addresses
 import contractAddresses from "../data/contractAddresses.json";
 // Wallet Addresses
@@ -150,6 +158,8 @@ function TestAccounts() {
           {wavaxBalance0 && <li>{formatEther(wavaxBalance0)} WAVAX</li>}
           {ggpBalance0 && <li>{formatEther(ggpBalance0)} GGP</li>}
           {ggavaxBalance0 && <li>{formatEther(ggavaxBalance0)} ggAVAX</li>}
+          <DepositAVAX value="ACCOUNT_0"/>
+          <RedeemggAVAX value="ACCOUNT_0"/>
         </ul>
       </div>
       <div className="balances">
@@ -159,6 +169,8 @@ function TestAccounts() {
           {wavaxBalance1 && <li>{formatEther(wavaxBalance1)} WAVAX</li>}
           {ggpBalance1 && <li>{formatEther(ggpBalance1)} GGP</li>}
           {ggavaxBalance1 && <li>{formatEther(ggavaxBalance1)} ggAVAX</li>}
+          <DepositAVAX value="ACCOUNT_1"/>
+          <RedeemggAVAX value="ACCOUNT_1"/>
         </ul>
       </div>
       <div className="balances">
@@ -168,6 +180,8 @@ function TestAccounts() {
           {wavaxBalance2 && <li>{formatEther(wavaxBalance2)} WAVAX</li>}
           {ggpBalance2 && <li>{formatEther(ggpBalance2)} GGP</li>}
           {ggavaxBalance2 && <li>{formatEther(ggavaxBalance2)} ggAVAX</li>}
+          <DepositAVAX value="ACCOUNT_2"/>
+          <RedeemggAVAX value="ACCOUNT_2"/>
         </ul>
       </div>
       <div className="balances">
@@ -177,6 +191,8 @@ function TestAccounts() {
           {wavaxBalance3 && <li>{formatEther(wavaxBalance3)} WAVAX</li>}
           {ggpBalance3 && <li>{formatEther(ggpBalance3)} GGP</li>}
           {ggavaxBalance3 && <li>{formatEther(ggavaxBalance3)} ggAVAX</li>}
+          <CreateMinipool value="ACCOUNT_3"/>
+          <WithdrawMinipool value="ACCOUNT_3"/>
         </ul>
       </div>
       <div className="balances">
@@ -186,6 +202,8 @@ function TestAccounts() {
           {wavaxBalance4 && <li>{formatEther(wavaxBalance4)} WAVAX</li>}
           {ggpBalance4 && <li>{formatEther(ggpBalance4)} GGP</li>}
           {ggavaxBalance4 && <li>{formatEther(ggavaxBalance4)} ggAVAX</li>}
+          <CreateMinipool value="ACCOUNT_4"/>
+          <WithdrawMinipool value="ACCOUNT_4"/>
         </ul>
       </div>
       <div className="balances">
@@ -195,6 +213,9 @@ function TestAccounts() {
           {wavaxBalance5 && <li>{formatEther(wavaxBalance5)} WAVAX</li>}
           {ggpBalance5 && <li>{formatEther(ggpBalance5)} GGP</li>}
           {ggavaxBalance5 && <li>{formatEther(ggavaxBalance5)} ggAVAX</li>}
+          <ClaimMinipool value="ACCOUNT_5"/>
+          <RecordStakingStart value="ACCOUNT_5"/>
+          <RecordStakingEnd value="ACCOUNT_5"/>
         </ul>
       </div>
       <div className="balances">
@@ -204,6 +225,9 @@ function TestAccounts() {
           {wavaxBalance6 && <li>{formatEther(wavaxBalance6)} WAVAX</li>}
           {ggpBalance6 && <li>{formatEther(ggpBalance6)} GGP</li>}
           {ggavaxBalance6 && <li>{formatEther(ggavaxBalance6)} ggAVAX</li>}
+          <ClaimMinipool value="ACCOUNT_6"/>
+          <RecordStakingStart value="ACCOUNT_6"/>
+          <RecordStakingEnd value="ACCOUNT_6"/>
         </ul>
       </div>
       <div className="balances">

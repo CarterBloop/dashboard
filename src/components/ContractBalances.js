@@ -1,4 +1,4 @@
-import { useEtherBalance} from "@usedapp/core";
+import { useEtherBalance, useTokenBalance } from "@usedapp/core";
 import { formatEther } from "@ethersproject/units";
 
 // Contract Address
@@ -11,7 +11,11 @@ function ContractBalances() {
   const wavax = useEtherBalance(contractAddresses["WAVAX"]);
   const storage = useEtherBalance(contractAddresses["Storage"]);
   const oneInch = useEtherBalance(contractAddresses["OneInchMock"]);
-  const vault = useEtherBalance(contractAddresses["Vault"]);
+  const vaultAVAX = useEtherBalance(contractAddresses["Vault"]);
+  const vaultGGP = useTokenBalance(
+    contractAddresses["TokenGGP"],
+    contractAddresses["Vault"]
+  );
   const oracle = useEtherBalance(contractAddresses["Oracle"]);
   const protocolDao = useEtherBalance(contractAddresses["ProtocolDao"]);
   const multisigmanager = useEtherBalance(contractAddresses["MultisigManager"]);
@@ -28,7 +32,8 @@ function ContractBalances() {
         {wavax && <li>WAVAX: {formatEther(wavax)} AVAX</li>}
         {storage && <li>Storage: {formatEther(storage)} AVAX</li>}
         {oneInch && <li>One Inch: {formatEther(oneInch)} AVAX</li>}
-        {vault && <li>Vault: {formatEther(vault)} AVAX</li>}
+        {vaultAVAX && <li>Vault: {formatEther(vaultAVAX)} AVAX</li>}
+        {vaultGGP && <li>Vault: {formatEther(vaultGGP)} GGP</li>}
         {oracle && <li>Oracle: {formatEther(oracle)} AVAX</li>}
         {protocolDao && <li>ProtocolDAO: {formatEther(protocolDao)} AVAX</li>}
         {multisigmanager && (

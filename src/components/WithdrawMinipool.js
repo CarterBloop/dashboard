@@ -9,40 +9,26 @@ import MinipoolManagerABI from "../abi/contract/MinipoolManager.sol/MinipoolMana
 // Private Keys
 import privateKeys from "../data/pk.json"
 
-const emptyWallet = (seed) => {
-	const pk = utils.randomBytes(32);
-	const w = new ethers.Wallet(pk);
-	return w;
-};
-
-// Random addresses to use for nodeIDs
-const nodeID = (seed) => {
-	return emptyWallet(seed).address;
-};
-
-function CreateMinipool(props) {
+function WithdrawMinipool(props) {
     let w = new ethers.Wallet(privateKeys[props.value],ethers.getDefaultProvider("http://localhost:8545"));
     let node = w.address; // Or NodeID()
-    let duration = 9999;
-    let delegationFee = 5;
-    let ggpBondAmt = utils.parseEther("200");
     const minipoolInterface = new utils.Interface(MinipoolManagerABI.abi);
     const minipoolContract = new Contract(contractAddresses["MinipoolManager"], minipoolInterface);
 
-    const { state, send } = useContractFunction(minipoolContract, 'createMinipool', { signer:w })
+    const { state, send } = useContractFunction(minipoolContract, 'withdrawMinipoolFunds', { signer:w })
     const { status } = state
 
-    const makePool = () => {
-      void send(node,duration,delegationFee,ggpBondAmt,{ value: utils.parseEther("1000") })
+    const withdrawPool = () => {
+      void send(node.address,{})
     }
 
     return (
       <div className="balances">
-        <p>Create Pool (1000 AVAX, 200 GGP): <button onClick={() => makePool()}>Create Minipool</button></p>
+        <p>Withdraw Minipool Funds: <button onClick={() => withdrawPool()}>Withdraw</button> </p>
         <p>---Status: {status}</p>
       </div>
     )
 }
 
-export default CreateMinipool;
+export default WithdrawMinipool;
 

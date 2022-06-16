@@ -8,25 +8,25 @@ import privateKeys from "../data/pk.json"
 // ABI
 import ggAvaxABI from "../abi/contract/tokens/TokenggAVAX.sol/TokenggAVAX.json"
 
-function DepositAVAX(props) {
+function RedeemggAVAX(props) {
     const ggAvaxInterface = new utils.Interface(ggAvaxABI.abi)
     const ggAvaxContract = new Contract(contractAddresses["TokenggAVAX"], ggAvaxInterface)
 
     let w = new ethers.Wallet(privateKeys[props.value],ethers.getDefaultProvider("http://localhost:8545"));
   
-    const { state, send } = useContractFunction(ggAvaxContract, 'depositAVAX', {signer:w})
+    const { state, send } = useContractFunction(ggAvaxContract, 'redeemAVAX', {signer:w})
     const { status } = state
   
-    const stakeAVAX = () => {
-      void send({ value: ethers.utils.parseEther("2000")})
+    const redeemAVAX = () => {
+      void send(ethers.utils.parseEther("2000"))
     }
   
     return (
       <div className="balances">
-        <p> Stake 2000 AVAX: <button onClick={() => stakeAVAX()}>Stake</button></p>
+        <p> Redeem 2000 ggAVAX: <button onClick={() => redeemAVAX()}>Stake</button></p>
         <p>---Status: {status}</p>
       </div>
     )
 }
 
-export default DepositAVAX;
+export default RedeemggAVAX;
