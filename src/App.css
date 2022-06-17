@@ -22,16 +22,17 @@
   border-radius: 20px;
 }
 
-.left {
-  float:left; 
-  width: 50vw;
-}
-.right {
-  float:right;
-  width: 50vw;
-}
 
 .App-header {
+  color: white;
+  display:flex;
+  background-color: #282c34;
+  align-items: left;
+  justify-content: left;
+  font-size: 20px;
+}
+
+.App-body {
   color: white;
   display:flex;
   background-color: #282c34;
