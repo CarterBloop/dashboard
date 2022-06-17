@@ -168,7 +168,7 @@ function TestAccounts() {
               <DepositAVAX value="ACCOUNT_0" />
               <RedeemggAVAX value="ACCOUNT_0" />
             </td>
-            <td>{avaxBalance0 && formatEther(avaxBalance0)}</td>
+            <td>{avaxBalance0 && Math.round(formatEther(avaxBalance0))}</td>
             <td>{ggavaxBalance0 && formatEther(ggavaxBalance0)}</td>
             <td>{ggpBalance0 && formatEther(ggpBalance0)}</td>
           </tr>
@@ -178,8 +178,8 @@ function TestAccounts() {
               <DepositAVAX value="ACCOUNT_1" />
               <RedeemggAVAX value="ACCOUNT_1" />
             </td>
-            <td>{avaxBalance1 && formatEther(avaxBalance1)}</td>
-            <td>{ggavaxBalance1 && formatEther(ggavaxBalance1)}</td>
+            <td>{avaxBalance1 && Math.round(formatEther(avaxBalance1))}</td>
+            <td>{ggavaxBalance1 && Math.round(formatEther(ggavaxBalance1))}</td>
             <td>{ggpBalance1 && formatEther(ggpBalance1)}</td>
           </tr>
           <tr>
@@ -188,7 +188,7 @@ function TestAccounts() {
               <DepositAVAX value="ACCOUNT_2" />
               <RedeemggAVAX value="ACCOUNT_2" />
             </td>
-            <td>{avaxBalance2 && formatEther(avaxBalance2)}</td>
+            <td>{avaxBalance2 && Math.round(formatEther(avaxBalance2))}</td>
             <td>{ggavaxBalance2 && formatEther(ggavaxBalance2)}</td>
             <td>{ggpBalance2 && formatEther(ggpBalance2)}</td>
           </tr>
@@ -198,7 +198,7 @@ function TestAccounts() {
               <CreateMinipool value="ACCOUNT_3" />
               <WithdrawMinipool value="ACCOUNT_3" />
             </td>
-            <td>{avaxBalance3 && formatEther(avaxBalance3)}</td>
+            <td>{avaxBalance3 && Math.round(formatEther(avaxBalance3))}</td>
             <td>{ggavaxBalance3 && formatEther(ggavaxBalance3)}</td>
             <td>{ggpBalance3 && formatEther(ggpBalance3)}</td>
           </tr>
@@ -208,7 +208,7 @@ function TestAccounts() {
               <CreateMinipool value="ACCOUNT_4" />
               <WithdrawMinipool value="ACCOUNT_4" />
             </td>
-            <td>{avaxBalance4 && formatEther(avaxBalance4)}</td>
+            <td>{avaxBalance4 && Math.round(formatEther(avaxBalance4))}</td>
             <td>{ggavaxBalance4 && formatEther(ggavaxBalance4)}</td>
             <td>{ggpBalance4 && formatEther(ggpBalance4)}</td>
           </tr>
@@ -220,7 +220,7 @@ function TestAccounts() {
               <RecordStakingEnd value="ACCOUNT_5" />
               <SyncRewards value="ACCOUNT_5" />
             </td>
-            <td>{avaxBalance5 && formatEther(avaxBalance5)}</td>
+            <td>{avaxBalance5 && Math.round(formatEther(avaxBalance5))}</td>
             <td>{ggavaxBalance5 && formatEther(ggavaxBalance5)}</td>
             <td>{ggpBalance5 && formatEther(ggpBalance5)}</td>
           </tr>
@@ -232,7 +232,7 @@ function TestAccounts() {
               <RecordStakingEnd value="ACCOUNT_6" />
               <SyncRewards value="ACCOUNT_6" />
             </td>
-            <td>{avaxBalance6 && formatEther(avaxBalance6)}</td>
+            <td>{avaxBalance6 && Math.round(formatEther(avaxBalance6))}</td>
             <td>{ggavaxBalance6 && formatEther(ggavaxBalance6)}</td>
             <td>{ggpBalance6 && formatEther(ggpBalance6)}</td>
           </tr>

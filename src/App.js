@@ -11,14 +11,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <VaultBalances />
-          <Oracle/>
-          <MinipoolManager/>
-          <TokenggAvax/>
-      </header>
-      <body className="App-body">
+      <div className="left">
         <TestAccounts/>
-      </body>
+      </div>
+      <div className="right">
+          <TokenggAvax/>
+          <VaultBalances />
+          <MinipoolManager/>
+          <Oracle/>
+      </div>
+      </header>
     </div>
   );
 }

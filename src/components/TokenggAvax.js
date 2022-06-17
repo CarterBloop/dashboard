@@ -68,7 +68,7 @@ function TokenggAvax() {
           {rewardsCycleLength && (<><td>Rewards Cycle Length: </td><td>{rewardsCycleLength}</td></>)}
         </tr>
         <tr>
-          {lastSync && (<><td>Last Sync: </td><td>{lastSync}</td></>)}
+          {formatUnits(lastSync) && (<><td>Last Sync: </td><td>{lastSync}</td></>)}
         </tr>
       </table>
     </div>

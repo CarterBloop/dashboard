@@ -1,63 +1,65 @@
 .App {
   text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .card {
-  text-align: left;
   background-color: white;
-  width: fit-content;
-  height: fit-content;
   color: #282c34;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 20px;
   border-radius: 20px;
+  padding:10px;
+  margin-top:20px;
+  margin-left:20px;
+  text-align:center;
+  justify-content: left;
+  width:fit-content;
 }
 
 .card-2 {
-  text-align: left;
   background-color: white;
-  width: 100%;
   color: #282c34;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 20px;
   border-radius: 20px;
+  padding:10px;
+  margin-top:20px;
+  margin-left:20px;
+  text-align:left;
+  justify-content: left;
+  width:fit-content;
 }
 
 .App-header {
   color: white;
   display: flex;
   background-color: #282c34;
-  align-items: left;
-  justify-content: left;
   font-size: 20px;
 }
 
-.App-body {
-  color: white;
-  display: flex;
-  background-color: #282c34;
-  align-items: left;
-  justify-content: left;
-  font-size: 20px;
+.left {
+  left:0;
+}
+.right {
+  right:0;
 }
 
 .button-1 {
-  background-color: rgb(228, 230, 255);
+  background-color: rgb(218, 220, 244);
   color: #282c34;
-  border: 2px solid rgb(27, 27, 75);
+  border: 2px solid rgb(66, 66, 113);
   padding:5px;
+  width:120px;
 }
 
 .button-1:hover {
-  background-color: blue;
+  background-color: rgb(22, 22, 102);
   color: white;
 }
 
 table, th, td {
-  border: 1px solid;
-  padding: 5px;
+  padding: 10px;
+}
+
+td {
+  border-top: 2px solid;
 }
 
 .table-1 {
