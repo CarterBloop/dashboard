@@ -154,8 +154,8 @@ function TestAccounts() {
   );
   return (
     <>
-      <div className="card">
-        <table>
+      <div className="card-2">
+        <table className="table-1">
           <tr>
             <th>Name</th>
             <th>AVAX</th>

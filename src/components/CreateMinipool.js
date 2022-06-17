@@ -40,8 +40,8 @@ function CreateMinipool(props) {
 
     return (
       <div>
-        <p>Create Pool (1000 AVAX, 200 GGP): <button className="button-1" onClick={() => makePool()}>Create Minipool</button></p>
-        <p>---Status: {status}</p>
+        <button className="button-1" onClick={() => makePool()}>Create Minipool</button>
+        <p2>---Status: {status}</p2>
       </div>
     )
 }

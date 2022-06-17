@@ -30,9 +30,8 @@ function RecordStakingStart(props) {
     }
 
     return (
-      <div>
-        <p>Record Staking Start: <button className="button-1" onClick={() => recordStart()}>Record Start</button></p>
-        <p>---Status: {status}</p>
+      <div> <button className="button-1" onClick={() => recordStart()}>Record Start</button>
+        <p2>---Status: {status}</p2>
       </div>
     )
 }
