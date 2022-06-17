@@ -3,8 +3,10 @@ import { useCall} from "@usedapp/core";
 import { Contract } from "@ethersproject/contracts";
 import { utils } from "ethers";
 
+import SetGGPPrice from "./SetGGPPrice";
+
 // Contract Address
-import contractAddresses from "../data/contractAddresses.json"
+import contractAddresses from "../data/contractAddresses.json";
 // ABI
 import oracleABI from "../abi/contract/Oracle.sol/Oracle.json";
 
@@ -32,13 +34,14 @@ function Oracle() {
   const GGPPrice = useOracleStats("getGGPPrice");
 
   return (
-    <div className="balances">
+    <div className="card">
       <h3>GGP Token</h3>
       <ul>
         {GGPPrice && (
           <li>Price: {formatEther(GGPPrice)}</li>
         )}
       </ul>
+      <SetGGPPrice/>
     </div>
   );
 }

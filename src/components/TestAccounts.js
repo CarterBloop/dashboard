@@ -10,6 +10,8 @@ import RecordStakingEnd from "./RecordStakingEnd";
 import RedeemggAVAX from "./RedeemggAVAX";
 import SyncRewards from "./SyncRewards";
 
+
+
 // Contract Addresses
 import contractAddresses from "../data/contractAddresses.json";
 // Wallet Addresses
@@ -152,7 +154,7 @@ function TestAccounts() {
   );
   return (
     <>
-      <div className="balances">
+      <div className="card">
         <h3>Alice:</h3>
         <ul>
           {avaxBalance0 && <li>{formatEther(avaxBalance0)} AVAX</li>}
@@ -163,7 +165,7 @@ function TestAccounts() {
           <RedeemggAVAX value="ACCOUNT_0"/>
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>Bob:</h3>
         <ul>
           {avaxBalance1 && <li>{formatEther(avaxBalance1)} AVAX</li>}
@@ -174,7 +176,7 @@ function TestAccounts() {
           <RedeemggAVAX value="ACCOUNT_1"/>
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>Cam:</h3>
         <ul>
           {avaxBalance2 && <li>{formatEther(avaxBalance2)} AVAX</li>}
@@ -185,7 +187,7 @@ function TestAccounts() {
           <RedeemggAVAX value="ACCOUNT_2"/>
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>NodeOp1:</h3>
         <ul>
           {avaxBalance3 && <li>{formatEther(avaxBalance3)} AVAX</li>}
@@ -196,7 +198,7 @@ function TestAccounts() {
           <WithdrawMinipool value="ACCOUNT_3"/>
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>NodeOp2:</h3>
         <ul>
           {avaxBalance4 && <li>{formatEther(avaxBalance4)} AVAX</li>}
@@ -207,7 +209,7 @@ function TestAccounts() {
           <WithdrawMinipool value="ACCOUNT_4"/>
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>Rialto1:</h3>
         <ul>
           {avaxBalance5 && <li>{formatEther(avaxBalance5)} AVAX</li>}
@@ -220,7 +222,7 @@ function TestAccounts() {
           <SyncRewards value="ACCOUNT_5"/>
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>Rialto2:</h3>
         <ul>
           {avaxBalance6 && <li>{formatEther(avaxBalance6)} AVAX</li>}
@@ -233,7 +235,7 @@ function TestAccounts() {
           <SyncRewards value="ACCOUNT_6"/>
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>Deployer:</h3>
         <ul>
           {avaxBalance7 && <li>{formatEther(avaxBalance7)} AVAX</li>}
@@ -242,7 +244,7 @@ function TestAccounts() {
           {ggavaxBalance7 && <li>{formatEther(ggavaxBalance7)} ggAVAX</li>}
         </ul>
       </div>
-      <div className="balances">
+      <div className="card">
         <h3>Rewarder:</h3>
         <ul>
           {avaxBalance8 && <li>{formatEther(avaxBalance8)} AVAX</li>}

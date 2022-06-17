@@ -7,6 +7,20 @@ import Oracle from "./components/Oracle";
 import SetGGPPrice from "./components/SetGGPPrice";
 import MinipoolManager from "./components/MinipoolManager";
 
+
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardFooter,
+  MDBCardHeader,
+  MDBCardImage,
+  MDBCardOverlay,
+  MDBCardSubTitle,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardGroup,
+  MDBCardLink,
+} from 'mdb-react-ui-kit';
 function App() {
   return (
     <div className="App">
@@ -18,7 +32,6 @@ function App() {
           <VaultBalances />
           <TokenggAvax/>
           <Oracle/>
-          <SetGGPPrice/>
           <MinipoolManager/>
         </div>
       </header>

@@ -31,7 +31,7 @@ function MinipoolManager() {
   const minipoolCount = useMinipoolStats("getMinipoolCount");
 
   return (
-    <div className="balances">
+    <div className="card">
       <h3>Minipools:</h3>
       <ul>
         {minipoolCount && <li># of minipools: {minipoolCount.toNumber()}</li>}

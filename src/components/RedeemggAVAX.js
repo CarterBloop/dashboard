@@ -22,7 +22,7 @@ function RedeemggAVAX(props) {
     }
   
     return (
-      <div className="balances">
+      <div className="button">
         <p> Redeem 2000 ggAVAX: <button onClick={() => redeemAVAX()}>Unstake</button></p>
         <p>---Status: {status}</p>
       </div>

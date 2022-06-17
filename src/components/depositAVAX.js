@@ -22,7 +22,7 @@ function DepositAVAX(props) {
     }
   
     return (
-      <div className="balances">
+      <div className="button">
         <p> Stake 2000 AVAX: <button onClick={() => stakeAVAX()}>Stake</button></p>
         <p>---Status: {status}</p>
       </div>

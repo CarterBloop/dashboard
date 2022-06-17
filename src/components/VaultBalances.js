@@ -13,7 +13,7 @@ function VaultBalances() {
     contractAddresses["Vault"]
   )  
   return (
-    <div className="balances">
+    <div className="card">
       <h3>Vault:</h3>
       <ul>
         {vaultAVAX && <li>{formatEther(vaultAVAX)} AVAX</li>}

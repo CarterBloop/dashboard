@@ -40,8 +40,8 @@ function TokenggAvax() {
   const stakingTotalAssets = useGGAVAXStats("stakingTotalAssets");
 
   return (
-    <div className="balances">
-      <h3>ggAVAX:</h3>
+    <div className="card">
+      <h3>ggAVAX Token:</h3>
       <ul>
         {rewardsCycleLength && (<li>Rewards Cycle Length: {rewardsCycleLength}</li>)}
         {lastSync && (<li>Last Sync: {formatUnits(lastSync)}</li>)}
