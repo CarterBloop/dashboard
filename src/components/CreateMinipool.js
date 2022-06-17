@@ -9,6 +9,7 @@ import MinipoolManagerABI from "../abi/contract/MinipoolManager.sol/MinipoolMana
 // Private Keys
 import privateKeys from "../data/pk.json"
 
+
 const emptyWallet = (seed) => {
 	const pk = utils.randomBytes(32);
 	const w = new ethers.Wallet(pk);
@@ -20,11 +21,12 @@ const nodeID = (seed) => {
 	return emptyWallet(seed).address;
 };
 
+
 function CreateMinipool(props) {
     let w = new ethers.Wallet(privateKeys[props.value],ethers.getDefaultProvider("http://localhost:8545"));
     let node = w.address; // Or NodeID()
-    let duration = 9999;
-    let delegationFee = 5;
+    let duration = 1209600; //14 Days 
+    let delegationFee = 0;
     let ggpBondAmt = utils.parseEther("200");
     const minipoolInterface = new utils.Interface(MinipoolManagerABI.abi);
     const minipoolContract = new Contract(contractAddresses["MinipoolManager"], minipoolInterface);
@@ -38,7 +40,7 @@ function CreateMinipool(props) {
 
     return (
       <div className="balances">
-        <p>Create Pool (1000 AVAX, 200 GGP): <button onClick={() => makePool()}>Create Minipool</button></p>
+        <p>Create Pool (1000 AVAX, 200 GGP, 14d,): <button onClick={() => makePool()}>Create Minipool</button></p>
         <p>---Status: {status}</p>
       </div>
     )

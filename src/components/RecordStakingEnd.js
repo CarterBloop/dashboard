@@ -1,4 +1,4 @@
-import { useContractFunction } from '@usedapp/core'
+import { useContractFunction, useCall } from '@usedapp/core'
 import { Contract } from "@ethersproject/contracts";
 import { ethers, utils } from "ethers";
 
@@ -20,6 +20,7 @@ function RecordStakingEnd(props) {
     let reward = "0";
     let w = new ethers.Wallet(privateKeys[props.value],ethers.getDefaultProvider("http://localhost:8545"));
     let n = new ethers.Wallet(privateKeys["ACCOUNT_3"],ethers.getDefaultProvider("http://localhost:8545"));
+
     const minipoolInterface = new utils.Interface(MinipoolManagerABI.abi);
     const minipoolContract = new Contract(contractAddresses["MinipoolManager"], minipoolInterface);
 

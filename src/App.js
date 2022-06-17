@@ -2,7 +2,7 @@ import "./App.css";
 
 import TokenggAvax from "./components/TokenggAvax";
 import TestAccounts from "./components/TestAccounts";
-import ContractBalances from "./components/ContractBalances";
+import VaultBalances from "./components/VaultBalances";
 import Oracle from "./components/Oracle";
 import SetGGPPrice from "./components/SetGGPPrice";
 import MinipoolManager from "./components/MinipoolManager";
@@ -15,7 +15,7 @@ function App() {
           <TestAccounts/>
         </div>
         <div className="right">
-          <ContractBalances />
+          <VaultBalances />
           <TokenggAvax/>
           <Oracle/>
           <SetGGPPrice/>

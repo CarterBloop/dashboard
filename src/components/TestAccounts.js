@@ -8,6 +8,7 @@ import ClaimMinipool from "./ClaimMinipool";
 import RecordStakingStart from "./RecordStakingStart";
 import RecordStakingEnd from "./RecordStakingEnd";
 import RedeemggAVAX from "./RedeemggAVAX";
+import SyncRewards from "./SyncRewards";
 
 // Contract Addresses
 import contractAddresses from "../data/contractAddresses.json";
@@ -216,6 +217,7 @@ function TestAccounts() {
           <ClaimMinipool value="ACCOUNT_5"/>
           <RecordStakingStart value="ACCOUNT_5"/>
           <RecordStakingEnd value="ACCOUNT_5"/>
+          <SyncRewards value="ACCOUNT_5"/>
         </ul>
       </div>
       <div className="balances">
@@ -228,6 +230,7 @@ function TestAccounts() {
           <ClaimMinipool value="ACCOUNT_6"/>
           <RecordStakingStart value="ACCOUNT_6"/>
           <RecordStakingEnd value="ACCOUNT_6"/>
+          <SyncRewards value="ACCOUNT_6"/>
         </ul>
       </div>
       <div className="balances">

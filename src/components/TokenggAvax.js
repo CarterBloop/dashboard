@@ -1,4 +1,4 @@
-import { formatEther } from "@ethersproject/units";
+import { formatEther, formatUnits } from "@ethersproject/units";
 import { useCall} from "@usedapp/core";
 import { Contract } from "@ethersproject/contracts";
 import { utils } from "ethers";
@@ -43,11 +43,9 @@ function TokenggAvax() {
     <div className="balances">
       <h3>ggAVAX:</h3>
       <ul>
-        {rewardsCycleLength && (
-          <li>Rewards Cycle Length: {rewardsCycleLength}</li>
-          )}
-        {lastSync && <li>Last Sync: {lastSync}</li>}
-        {rewardsCycleEnd && <li>Rewards Cycle End: {rewardsCycleEnd}</li>}
+        {rewardsCycleLength && (<li>Rewards Cycle Length: {rewardsCycleLength}</li>)}
+        {lastSync && (<li>Last Sync: {formatUnits(lastSync)}</li>)}
+        {rewardsCycleEnd && (<li>Rewards Cycle End: {rewardsCycleEnd}</li>)}
         {lastRewardAmount && (
           <li>Last Reward Amount: {formatEther(lastRewardAmount)}</li>
         )}
