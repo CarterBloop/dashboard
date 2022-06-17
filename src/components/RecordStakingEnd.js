@@ -32,8 +32,8 @@ function RecordStakingEnd(props) {
     }
 
     return (
-      <div className="button">
-        <p>Record Staking End: <button onClick={() => recordEnd()}>Record End</button></p>
+      <div>
+        <p>Record Staking End: <button className="button-1" onClick={() => recordEnd()}>Record End</button></p>
         <p>---Status: {status}</p>
       </div>
     )

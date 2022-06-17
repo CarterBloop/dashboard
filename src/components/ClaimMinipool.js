@@ -23,8 +23,8 @@ function ClaimMinipool(props) {
     }
 
     return (
-      <div className="button">
-        <p>Claim Minipool (NodeOp1):<button onClick={() => claimPool()}>Claim</button></p>
+      <div>
+        <p>Claim Minipool (NodeOp1):<button className="button-1" onClick={() => claimPool()}>Claim</button></p>
         <p>Status: {status}</p>
       </div>
     )

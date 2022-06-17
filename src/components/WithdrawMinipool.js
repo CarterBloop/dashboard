@@ -23,8 +23,8 @@ function WithdrawMinipool(props) {
     }
 
     return (
-      <div className="button">
-        <p>Withdraw Minipool Funds: <button onClick={() => withdrawPool()}>Withdraw</button> </p>
+      <div >
+        <p>Withdraw Minipool Funds: <button className="button-1" onClick={() => withdrawPool()}>Withdraw</button> </p>
         <p>---Status: {status}</p>
       </div>
     )

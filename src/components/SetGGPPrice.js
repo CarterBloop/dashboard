@@ -21,8 +21,8 @@ function SetGGPPrice() {
     }
 
     return (
-      <div className="button">
-        <button onClick={() => setPrice()}>Set Price</button>
+      <div>
+        <button className="button-1" onClick={() => setPrice()}>Set Price</button>
         <p>Status: {status}</p>
       </div>
     )

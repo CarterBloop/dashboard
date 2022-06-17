@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       <header className="App-header">
           <VaultBalances />
-          <TokenggAvax/>
           <Oracle/>
           <MinipoolManager/>
+          <TokenggAvax/>
       </header>
       <body className="App-body">
         <TestAccounts/>

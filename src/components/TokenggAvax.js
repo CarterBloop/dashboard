@@ -41,29 +41,36 @@ function TokenggAvax() {
 
   return (
     <div className="card">
-      <h3>ggAVAX Token:</h3>
-      <ul>
-        {rewardsCycleLength && (<li>Rewards Cycle Length: {rewardsCycleLength}</li>)}
-        {lastSync && (<li>Last Sync: {formatUnits(lastSync)}</li>)}
-        {rewardsCycleEnd && (<li>Rewards Cycle End: {rewardsCycleEnd}</li>)}
-        {lastRewardAmount && (
-          <li>Last Reward Amount: {formatEther(lastRewardAmount)}</li>
-        )}
-        {totalReleasedAssets && (
-          <li>Total Released Assets: {formatEther(totalReleasedAssets)}</li>
-        )}
-        {stakingTotalAssets && (
-          <li>Staking Total Assets: {formatEther(stakingTotalAssets)}</li>
-        )}
-        {totalFloat && <li>Total Float: {formatEther(totalFloat)}</li>}
-        {amountAvailableForStaking && (
-          <li>
-            Amount Available for Staking:{" "}
-            {formatEther(amountAvailableForStaking)}
-          </li>
-        )}
-        {totalAssets && <li>Total Assets: {formatEther(totalAssets)}</li>}
-      </ul>
+      <h3>ggAVAX:</h3>
+      <table className="table">
+        <tr>
+          {totalFloat && (<><td>Total Float: </td><td>{formatEther(totalFloat)}</td></>)}
+        </tr>
+        <tr>
+          {totalAssets && (<><td>Total Assets: </td><td>{formatEther(totalAssets)}</td></>)}
+        </tr>
+        <tr>
+          {amountAvailableForStaking && (<><td>Available for Staking: </td><td>{formatEther(amountAvailableForStaking)}</td></>)}
+        </tr>
+        <tr>
+          {stakingTotalAssets && (<><td>Staking Total Assets: </td><td>{formatEther(stakingTotalAssets)}</td></>)}
+        </tr>
+        <tr>
+          {totalReleasedAssets && (<><td>Total Released Assets: </td><td>{formatEther(totalReleasedAssets)}</td></>)}
+        </tr>
+        <tr>
+          {lastRewardAmount && (<><td>Last Reward Amount: </td><td>{formatEther(lastRewardAmount)}</td></>)}
+        </tr>
+        <tr>
+          {rewardsCycleEnd && (<><td>Rewards Cycle End </td><td>{rewardsCycleEnd}</td></>)}
+        </tr>
+        <tr>
+          {rewardsCycleLength && (<><td>Rewards Cycle Length: </td><td>{rewardsCycleLength}</td></>)}
+        </tr>
+        <tr>
+          {lastSync && (<><td>Last Sync: </td><td>{lastSync}</td></>)}
+        </tr>
+      </table>
     </div>
   );
 }

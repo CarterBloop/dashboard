@@ -23,8 +23,8 @@ function SyncRewards(props) {
     }
 
     return (
-      <div className="button">
-        <p>Sync ggAVAX Rewards: <button onClick={() => sync()}>Sync</button></p>
+      <div>
+        <p>Sync ggAVAX Rewards: <button className="button-1" onClick={() => sync()}>Sync</button></p>
         <p>---Status: {status}</p>
       </div>
     )
