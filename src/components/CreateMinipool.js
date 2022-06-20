@@ -9,22 +9,11 @@ import MinipoolManagerABI from "../abi/contract/MinipoolManager.sol/MinipoolMana
 // Private Keys
 import privateKeys from "../data/pk.json"
 
-
-const emptyWallet = (seed) => {
-	const pk = utils.randomBytes(32);
-	const w = new ethers.Wallet(pk);
-	return w;
-};
-
-// Random addresses to use for nodeIDs
-const nodeID = (seed) => {
-	return emptyWallet(seed).address;
-};
-
+import { nodeID } from "../utils/utils.js"
 
 function CreateMinipool(props) {
     let w = new ethers.Wallet(privateKeys[props.value],ethers.getDefaultProvider("http://localhost:8545"));
-    let node = w.address; // Or NodeID()
+    let node = nodeID("NodeOp1"); // Or w.address
     let duration = 1209600; //14 Days 
     let delegationFee = 0;
     let ggpBondAmt = utils.parseEther("200");
@@ -35,7 +24,8 @@ function CreateMinipool(props) {
     const { status } = state
 
     const makePool = () => {
-      void send(node,duration,delegationFee,ggpBondAmt,{ value: utils.parseEther("1000") })
+      void send(node,duration,delegationFee,ggpBondAmt,{ value: utils.parseEther("1000"), gasPrice: 18000000,
+			gasLimit: 3000000 })
     }
 
     return (

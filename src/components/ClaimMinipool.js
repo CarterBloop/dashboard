@@ -9,9 +9,10 @@ import MinipoolManagerABI from "../abi/contract/MinipoolManager.sol/MinipoolMana
 // Private Keys
 import privateKeys from "../data/pk.json"
 
+import { nodeID } from "../utils/utils.js"
+
 function ClaimMinipool(props) {
     let w = new ethers.Wallet(privateKeys[props.value],ethers.getDefaultProvider("http://localhost:8545"));
-    let n = new ethers.Wallet(privateKeys["ACCOUNT_3"],ethers.getDefaultProvider("http://localhost:8545"));
     const minipoolInterface = new utils.Interface(MinipoolManagerABI.abi);
     const minipoolContract = new Contract(contractAddresses["MinipoolManager"], minipoolInterface);
 
@@ -19,7 +20,7 @@ function ClaimMinipool(props) {
     const { status } = state
 
     const claimPool = () => {
-      void send(n.address,{})
+      void send(nodeID("NodeOp1"),{})
     }
 
     return (

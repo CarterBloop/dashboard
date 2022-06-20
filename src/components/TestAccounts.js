@@ -20,10 +20,6 @@ import accounts from "../data/accounts.json";
 function TestAccounts() {
   // Account #0 Balances
   const avaxBalance0 = useEtherBalance(accounts["ACCOUNT_0"]);
-  const wavaxBalance0 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_0"]
-  );
   const ggpBalance0 = useTokenBalance(
     contractAddresses["TokenGGP"],
     accounts["ACCOUNT_0"]
@@ -35,10 +31,6 @@ function TestAccounts() {
 
   // Account #1 Balances
   const avaxBalance1 = useEtherBalance(accounts["ACCOUNT_1"]);
-  const wavaxBalance1 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_1"]
-  );
   const ggpBalance1 = useTokenBalance(
     contractAddresses["TokenGGP"],
     accounts["ACCOUNT_1"]
@@ -50,10 +42,6 @@ function TestAccounts() {
 
   // Account #2 Balances
   const avaxBalance2 = useEtherBalance(accounts["ACCOUNT_2"]);
-  const wavaxBalance2 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_2"]
-  );
   const ggpBalance2 = useTokenBalance(
     contractAddresses["TokenGGP"],
     accounts["ACCOUNT_2"]
@@ -65,10 +53,6 @@ function TestAccounts() {
 
   // Account #3 Balances
   const avaxBalance3 = useEtherBalance(accounts["ACCOUNT_3"]);
-  const wavaxBalance3 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_3"]
-  );
   const ggpBalance3 = useTokenBalance(
     contractAddresses["TokenGGP"],
     accounts["ACCOUNT_3"]
@@ -80,10 +64,6 @@ function TestAccounts() {
 
   // Account #4 Balances
   const avaxBalance4 = useEtherBalance(accounts["ACCOUNT_4"]);
-  const wavaxBalance4 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_4"]
-  );
   const ggpBalance4 = useTokenBalance(
     contractAddresses["TokenGGP"],
     accounts["ACCOUNT_4"]
@@ -95,10 +75,6 @@ function TestAccounts() {
 
   // Account #5 Balances
   const avaxBalance5 = useEtherBalance(accounts["ACCOUNT_5"]);
-  const wavaxBalance5 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_5"]
-  );
   const ggpBalance5 = useTokenBalance(
     contractAddresses["TokenGGP"],
     accounts["ACCOUNT_5"]
@@ -110,10 +86,6 @@ function TestAccounts() {
 
   // Account #6 Balances
   const avaxBalance6 = useEtherBalance(accounts["ACCOUNT_6"]);
-  const wavaxBalance6 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_6"]
-  );
   const ggpBalance6 = useTokenBalance(
     contractAddresses["TokenGGP"],
     accounts["ACCOUNT_6"]
@@ -121,36 +93,6 @@ function TestAccounts() {
   const ggavaxBalance6 = useTokenBalance(
     contractAddresses["TokenggAVAX"],
     accounts["ACCOUNT_6"]
-  );
-
-  // Account #7 Balances
-  const avaxBalance7 = useEtherBalance(accounts["ACCOUNT_7"]);
-  const wavaxBalance7 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_7"]
-  );
-  const ggpBalance7 = useTokenBalance(
-    contractAddresses["TokenGGP"],
-    accounts["ACCOUNT_7"]
-  );
-  const ggavaxBalance7 = useTokenBalance(
-    contractAddresses["TokenggAVAX"],
-    accounts["ACCOUNT_7"]
-  );
-
-  // Account #8 Balances
-  const avaxBalance8 = useEtherBalance(accounts["ACCOUNT_8"]);
-  const wavaxBalance8 = useTokenBalance(
-    contractAddresses["WAVAX"],
-    accounts["ACCOUNT_8"]
-  );
-  const ggpBalance8 = useTokenBalance(
-    contractAddresses["TokenGGP"],
-    accounts["ACCOUNT_8"]
-  );
-  const ggavaxBalance8 = useTokenBalance(
-    contractAddresses["TokenggAVAX"],
-    accounts["ACCOUNT_8"]
   );
   return (
     <>

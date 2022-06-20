@@ -9,12 +9,7 @@ import MinipoolManagerABI from "../abi/contract/MinipoolManager.sol/MinipoolMana
 // Private Keys
 import privateKeys from "../data/pk.json"
 
-async function now() {
-  const p = ethers.getDefaultProvider("http://localhost:8545");
-  const latest = await p.getBlockNumber();
-	const b = await p.getBlock(latest);
-	return ethers.BigNumber.from(b.timestamp);
-}
+import { now } from "../utils/utils.js";
 
 function RecordStakingEnd(props) {
     let reward = "0";
@@ -28,7 +23,8 @@ function RecordStakingEnd(props) {
     const { status } = state
 
     const recordEnd = () => {
-      void send(n.address,now(),ethers.utils.parseEther(reward),{value:ethers.utils.parseEther("1000")})
+      void send(n.address,now(),ethers.utils.parseEther(reward),{value:ethers.utils.parseEther("1000"), gasPrice: 18000000,
+			gasLimit: 3000000 })
     }
 
     return (
