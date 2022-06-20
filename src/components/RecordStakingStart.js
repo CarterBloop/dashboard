@@ -9,11 +9,11 @@ import MinipoolManagerABI from "../abi/contract/MinipoolManager.sol/MinipoolMana
 // Private Keys
 import privateKeys from "../data/pk.json"
 
-import { now } from "../utils/utils.js";
+import { now, nodeID } from "../utils/utils.js";
+
 
 function RecordStakingStart(props) {
     let w = new ethers.Wallet(privateKeys[props.value],ethers.getDefaultProvider("http://localhost:8545"));
-    let n = new ethers.Wallet(privateKeys["ACCOUNT_3"],ethers.getDefaultProvider("http://localhost:8545"));
     const minipoolInterface = new utils.Interface(MinipoolManagerABI.abi);
     const minipoolContract = new Contract(contractAddresses["MinipoolManager"], minipoolInterface);
 
@@ -21,8 +21,8 @@ function RecordStakingStart(props) {
     const { status } = state
 
     const recordStart = () => {
-      void send(n.address,now(),{gasPrice: 18000000,
-        gasLimit: 3000000 })
+      void send(nodeID("NodeOp1"),now(),{gasPrice: 18000000,
+        gasLimit: 3000000})
     }
 
     return (
